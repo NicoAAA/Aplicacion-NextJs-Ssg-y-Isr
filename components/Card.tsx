@@ -16,7 +16,7 @@ interface CardProps {
  */
 const Card: React.FC<CardProps> = ({ title, description, link, linkText, imageUrl, imageAlt }) => {
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6 m-4 w-80 flex flex-col justify-between transform transition-transform duration-300 hover:scale-105">
+    <div className="bg-[#262c3a] rounded-lg shadow-lg p-6 m-4 w-80 flex flex-col justify-between transform transition-transform duration-300 hover:scale-105">
       {imageUrl && (
         <img
           src={imageUrl}
@@ -29,12 +29,12 @@ const Card: React.FC<CardProps> = ({ title, description, link, linkText, imageUr
         />
       )}
       <div>
-        <h2 className="text-2xl font-bold mb-2 text-gray-800">{title}</h2>
-        <p className="text-gray-600 mb-4">{description}</p>
+        <h2 className="text-2xl font-bold mb-2 text-gray-100">{title}</h2>
+        <p className="text-gray-400 mb-4">{description}</p>
       </div>
       <a
         href={link}
-        className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg text-center transition-colors duration-300"
+        className="inline-block bg-purple-700 hover:bg-purple-900 text-white font-semibold py-2 px-4 rounded-lg text-center transition-colors duration-300"
       >
         {linkText}
       </a>

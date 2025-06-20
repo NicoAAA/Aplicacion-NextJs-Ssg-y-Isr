@@ -14,7 +14,7 @@ interface LayoutProps {
  */
 const Layout: React.FC<LayoutProps> = ({ children, title = 'Next.js Modules Project' }) => {
   return (
-    <div className="min-h-screen bg-gray-100 font-inter flex flex-col">
+    <div className="min-h-screen bg-[linear-gradient(to_bottom,#78feb4,#33dab7,#00b4b0,#008e9c,#276a7e,#2f4858)] font-inter flex flex-col">
       <header className="bg-[#262c3a] text-white p-6 shadow-md">
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
             <img
@@ -26,17 +26,17 @@ const Layout: React.FC<LayoutProps> = ({ children, title = 'Next.js Modules Proj
             <ul className="flex flex-wrap justify-center space-x-6 flex-grow">
               <li>
           <Link href="/" className="flex items-center text-lg hover:text-blue-200 transition-colors duration-200">
-            <FaHome className="mr-2" /> Inicio (SSR)
+            <FaHome className="mr-2" /> Inicio (SSG)
           </Link>
               </li>
               <li>
-          <Link href="/ssg/1" className="flex items-center text-lg hover:text-blue-200 transition-colors duration-200">
-            <FaCode className="mr-2" /> SSG (ID 1)
+          <Link href="/ssr/1" className="flex items-center text-lg hover:text-blue-200 transition-colors duration-200">
+            <FaCode className="mr-2" /> SSR Crypto RICK & MORTY
           </Link>
               </li>
               <li>
           <Link href="/isr/1" className="flex items-center text-lg hover:text-blue-200 transition-colors duration-200">
-            <FaSyncAlt className="mr-2" /> ISR (ID 1)
+            <FaSyncAlt className="mr-2" /> ISR Detalles
           </Link>
               </li>
             </ul>

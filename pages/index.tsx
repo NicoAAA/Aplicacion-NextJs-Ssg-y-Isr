@@ -25,7 +25,7 @@ const HomePage: React.FC<HomePageProps> = ({ characters, error }) => {
   return (
     <Layout title="Next.js SSR con Rick and Morty">
       <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">
-        SSR: Personajes de Rick y Morty obtenidos en el servidor en cada solicitud
+        SSG: Personajes de Rick y Morty
       </h2>
       {error && (
         <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-6" role="alert">
@@ -64,7 +64,7 @@ export const getServerSideProps: GetServerSideProps<HomePageProps> = async () =>
       throw new Error(`Error HTTP: ${res.status} - ${res.statusText}`);
     }
     const data = await res.json();
-    const characters: Character[] = data.results.slice(0, 6); // Limitar a 6 personajes
+    const characters: Character[] = data.results.slice(0, 18); // Limitar a 6 personajes
 
     return {
       props: {

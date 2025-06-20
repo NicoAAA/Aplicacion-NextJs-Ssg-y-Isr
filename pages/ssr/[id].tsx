@@ -117,40 +117,40 @@ const HomePage: React.FC<HomePageProps> = ({ coins, error }) => {
 
       {coins.length > 0 ? (
         <div className="overflow-x-auto">
-          <table className="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
-            <thead className="bg-gray-100">
+          <table className="min-w-full bg-[#262c3a] shadow-md rounded-lg overflow-hidden">
+            <thead className="bg-purple-700">
               <tr>
-                <th className="py-3 px-4 text-left text-gray-600 font-bold uppercase text-sm">Moneda Interdimensional</th>
-                <th className="py-3 px-4 text-left text-gray-600 font-bold uppercase text-sm">Símbolo</th>
-                <th className="py-3 px-4 text-right text-gray-600 font-bold uppercase text-sm">Valor Actual (USD)</th>
-                <th className="py-3 px-4 text-right text-gray-600 font-bold uppercase text-sm">Fluctuación 24h (%)</th>
-                <th className="py-3 px-4 text-right text-gray-600 font-bold uppercase text-sm">Capitalización Cósmica</th>
+                <th className="py-3 px-4 text-left text-white font-bold uppercase text-sm">Moneda Interdimensional</th>
+                <th className="py-3 px-4 text-left text-white font-bold uppercase text-sm">Símbolo</th>
+                <th className="py-3 px-4 text-right text-white font-bold uppercase text-sm">Valor Actual (USD)</th>
+                <th className="py-3 px-4 text-right text-white font-bold uppercase text-sm">Fluctuación 24h (%)</th>
+                <th className="py-3 px-4 text-right text-white font-bold uppercase text-sm">Capitalización Cósmica</th>
               </tr>
             </thead>
             <tbody>
               {coins.map((coin) => (
-                <tr key={coin.id} className="border-b border-gray-200 hover:bg-gray-50">
-                  <td className="py-3 px-4 flex items-center">
+                <tr key={coin.id} className="border-b border-gray-200 hover:bg-gray-700">
+                  <td className="py-3 px-4 flex items-center text-white">
                     {/* Usamos la imagen de Rick y Morty aquí */}
                     <img src={coin.rickAndMortyImage} alt={coin.rickAndMortyName} className="w-6 h-6 mr-2 rounded-full" />
                     {coin.rickAndMortyName}
                   </td>
-                  <td className="py-3 px-4">{coin.rickAndMortySymbol}</td>
-                  <td className="py-3 px-4 text-right">${coin.current_price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
+                  <td className="py-3 px-4 text-white">{coin.rickAndMortySymbol}</td>
+                  <td className="py-3 px-4 text-right text-white">${coin.current_price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
                   <td className={`py-3 px-4 text-right ${coin.price_change_percentage_24h >= 0 ? 'text-green-600' : 'text-red-600'}`}>
                     {coin.price_change_percentage_24h ? coin.price_change_percentage_24h.toFixed(2) : 'N/A'}%
                   </td>
-                  <td className="py-3 px-4 text-right">${coin.market_cap.toLocaleString()}</td>
+                  <td className="py-3 px-4 text-right text-white">${coin.market_cap.toLocaleString()}</td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
       ) : (
-        !error && <p className="text-center text-gray-600">Cargando datos de monedas interdimensionales...</p>
+        !error && <p className="text-center text-white">Cargando datos de monedas interdimensionales...</p>
       )}
 
-      <p className="mt-8 text-center text-gray-600 text-sm">
+      <p className="mt-8 text-center text-white text-sm">
         Esta página usa SSR. Los precios de las monedas interdimensionales se obtienen en el servidor en cada solicitud, garantizando los datos más actuales del multiverso.
       </p>
     </Layout>
